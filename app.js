@@ -135,13 +135,13 @@ const checkRow = () => {
         flipTile()
 
         if(wordle == guess) {
-            showMessage('Magnificent!')
+            showMessage('Magnifico! Você acertou. A palavra era ' + wordle)
             isGameOver = true
             return
         } else {
             if (currentRow >= 5) {
                 isGameOver = false
-                showMessage('game over')
+                showMessage('game over! Você não acertou, a palavra era ' + wordle)
                 return
             }
             if(currentRow < 5) {
@@ -156,7 +156,7 @@ const showMessage = (message) => {
     const messageElement = document.createElement('p')
     messageElement.textContent = message
     messageDisplay.append(messageElement)
-    setTimeout(() => messageDisplay.removeChild(messageElement), 2000)
+    setTimeout(() => messageDisplay.removeChild(messageElement), 4000)
 }
 
 const addColorToKey = (keyLetter, color) => {
@@ -200,3 +200,12 @@ const flipTile = () => {
         }, 500 * index)
     })
 }
+
+// dark mode
+
+const $html = document.querySelector('html')
+const $checkbox = document.querySelector('#chk')
+
+$checkbox.addEventListener('change', (e) => {
+    $html.classList.toggle('dark-mode', e.target.checked)
+})

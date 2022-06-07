@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>letris</title>
     <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
@@ -14,6 +17,15 @@
         <div class="title-container">
             <h1>letris</h1>
             <div id="title-line"></div>
+            <div class="dark-mode">
+                <input type="checkbox" class="checkbox" id="chk">
+
+                <label class="label" for="chk">
+                    <ion-icon name="moon"></ion-icon>
+                    <ion-icon name="sunny"></ion-icon>
+                    <div class="ball"></div>
+                </label>
+            </div>
         </div>
 
         <div class="message-container"></div>
